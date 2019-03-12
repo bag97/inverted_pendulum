@@ -17,7 +17,9 @@
 #define ENCODER_INTERRUPT 4
 #define PIN_A 2
 #define PIN_B 3
-#define START_TICKS 256 //parallel to ground (1/4 of 1024)
+//Pin 2 and 3 are the two interrupt pins on the arduino nano board
+#define START_TICKS 256
+ //parallel to ground (1/4 of 1024)
 
 class Encoder {
     public:
@@ -28,6 +30,7 @@ class Encoder {
         int getPosition();
 
     private:
+	//Declaration of values
 		static volatile bool encoder_A_set;
         static volatile bool encoder_B_set;
         static volatile int encoder_ticks;
